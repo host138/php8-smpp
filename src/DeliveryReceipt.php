@@ -45,16 +45,20 @@ class DeliveryReceipt extends Sms
         }
         [
             $matched,
-            $this->id,
-            $this->sub,
-            $this->dlvrd,
+            $id,
+            $sub,
+            $dlvrd,
             $submitDate,
             $doneDate,
             $this->stat,
-            $this->err,
+            $err,
             $this->text
         ] = $matches;
 
+        $this->id = (int)$id;
+        $this->sub = (int)$sub;
+        $this->dlvrd = (int)$dlvrd;
+        $this->err = (int)$err;
         $this->submitDate = $this->convertDate($submitDate);
         $this->doneDate = $this->convertDate($doneDate);
     }
@@ -63,12 +67,12 @@ class DeliveryReceipt extends Sms
     {
         $dateParts = str_split($date, 2);
         $timestamp = gmmktime(
-            (int)$dateParts[3],
-            (int)$dateParts[4],
-            (int)$dateParts[5],
-            (int)$dateParts[1],
-            (int)$dateParts[2],
-            (int)$dateParts[0]
+            (int)($dateParts[3] ?? 0),
+            (int)($dateParts[4] ?? 0),
+            (int)($dateParts[5] ?? 0),
+            (int)($dateParts[1] ?? 0),
+            (int)($dateParts[2] ?? 0),
+            (int)($dateParts[0] ?? 0)
         );
 
         if ($timestamp === false) {
