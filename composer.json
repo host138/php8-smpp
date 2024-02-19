@@ -29,5 +29,7 @@
     "psr-4": {
       "smpp\\":   "src/"
     }
-  }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }
