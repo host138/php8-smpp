@@ -5,14 +5,14 @@ SMPP Client (v 3.4) on PHP8
 ## In development! Not production ready!
 
 ____
-# readme below from https://github.com/alexandr-mironov/php-smpp 
+# readme below from https://github.com/host138/php-smpp 
 
 PHP SMPP (v3.4) client
 ====
 
 Install:
 
-    composer require alexandr-mironov/php8-smpp
+    composer require host138/php8-smpp
 
 Example of wrapper (php>=7.0) for this Client.
 In this case we got ALPHANUMERIC sender value 'github_example':
